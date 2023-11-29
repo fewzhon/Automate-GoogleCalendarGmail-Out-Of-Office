@@ -42,7 +42,6 @@ function activateOutOfOffice() {
   }
 }
 
-
 function findEvents(calendarId, keywords) {
   for (const keyword of keywords) {
     const eventsForKeyword = Calendar.Events.list(calendarId, {
