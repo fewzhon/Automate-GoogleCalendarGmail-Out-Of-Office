@@ -52,6 +52,10 @@ Consider the following Google Calendar event:
 
 The script will activate an out-of-office reply during this period.
 
+## How to Implement
+
+[Instruction](https://www.linkedin.com/pulse/automate-gmails-out-of-office-based-google-calendar-event-gyasi-nykoe?trk=public_post_feed-article-content)
+
 ## Contributing
 
 Feel free to contribute to the project. Please follow our [Contribution Guidelines](CONTRIBUTING.md).
