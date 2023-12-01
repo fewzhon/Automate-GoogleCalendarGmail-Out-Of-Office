@@ -53,7 +53,7 @@ Consider the following Google Calendar event:
 The script will activate an out-of-office reply during this period.
 
 ## Code
-[Gmail_Calendar_Out_Of_Office.gs]([Gmail_Calendar_Out_Of_Office.gs](https://github.com/fewzhon/Automate-GoogleCalendarGmail-Out-Of-Office/blob/main/Gmail_Calendar_Out_Of_Office.gs))
+[Gmail_Calendar_Out_Of_Office.gs](https://github.com/fewzhon/Automate-GoogleCalendarGmail-Out-Of-Office/blob/main/Gmail_Calendar_Out_Of_Office.gs)
 
 ## How to Implement
 
