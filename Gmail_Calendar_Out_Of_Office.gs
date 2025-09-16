@@ -107,12 +107,12 @@ function generateDefaultResponseBody(formattedReturnDate) {
   return `Hi,<br><br>Thank you for your email,<br><br>I am currently out of the office and will not be available to respond to emails until ${formattedReturnDate}. During this period, my access to email will be limited, and there may be a delay in my response.<br><br>If you require immediate assistance, please contact:<br><br>
   <div style="max-width: 300px; margin: 20px 0; padding: 20px; border: 2px solid #0066cc; border-radius: 10px; background-color: #f8f9fa; font-family: Arial, sans-serif; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
     <div style="text-align: center; margin-bottom: 15px;">
-      <div style="width: 60px; height: 60px; background-color: #0066cc; border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold;">DR</div>
-      <h3 style="margin: 0; color: #333; font-size: 18px;">Dennis Roudebush</h3>
+      <div style="width: 60px; height: 60px; background-color: #0066cc; border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold;">JB</div>
+      <h3 style="margin: 0; color: #333; font-size: 18px;">Joe Bloggs</h3>
       <p style="margin: 5px 0 0 0; color: #666; font-size: 14px; font-style: italic;">Senior Manager</p>
     </div>
     <div style="text-align: center;">
-      <a href="mailto:dennis.roudebush@iress.com" style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 14px; transition: background-color 0.3s;">📧 Contact Dennis</a>
+      <a href="mailto:joe.bloggs@email.com" style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 14px; transition: background-color 0.3s;">📧 Contact Joe</a>
     </div>
   </div><br>I appreciate your understanding and cooperation during my absence.<br>Thank you for your patience.<br><br>Best Regards.`;
 }
