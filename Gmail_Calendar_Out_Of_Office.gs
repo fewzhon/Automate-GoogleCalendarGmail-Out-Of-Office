@@ -42,7 +42,7 @@ function isEventActiveOrUpcoming(currentTime, startDate, endDate) {
   return currentTime >= oneDayBeforeStart && currentTime <= eventEnd;
 }
 
-function updateVacationSettings(start, end, responseSubject, formattedEndDate) {
+function updateVacationSettings(start, end, responseSubject, formattedReturnDate) {
   try {
     const existingSettings = Gmail.Users.Settings.getVacation('me');
     const vacationSettings = {
@@ -104,15 +104,27 @@ function isEventActive(currentTime, startDate, endDate) {
 }
 
 function generateDefaultResponseBody(formattedReturnDate) {
-  return `Hi,<br><br>Thank you for your email,<br><br>I am currently out of the office and will not be available to respond to emails until ${formattedReturnDate}. During this period, my access to email will be limited, and there may be a delay in my response.<br><br>If you require immediate assistance, please contact:<br><br>
-  <div style="max-width: 300px; margin: 20px 0; padding: 20px; border: 2px solid #0066cc; border-radius: 10px; background-color: #f8f9fa; font-family: Arial, sans-serif; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-    <div style="text-align: center; margin-bottom: 15px;">
-      <div style="width: 60px; height: 60px; background-color: #0066cc; border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold;">JB</div>
-      <h3 style="margin: 0; color: #333; font-size: 18px;">Joe Bloggs</h3>
-      <p style="margin: 5px 0 0 0; color: #666; font-size: 14px; font-style: italic;">Senior Manager</p>
-    </div>
-    <div style="text-align: center;">
-      <a href="mailto:joe.bloggs@email.com" style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 14px; transition: background-color 0.3s;">📧 Contact Joe</a>
-    </div>
-  </div><br>I appreciate your understanding and cooperation during my absence.<br>Thank you for your patience.<br><br>Best Regards.`;
+  return `
+  <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; line-height: 1.6; max-width: 600px;">
+    <p style="margin: 0 0 16px 0; font-size: 15px;">Thank you for your email.</p>
+    
+    <p style="margin: 0 0 16px 0; font-size: 15px;">I'm currently out of the office and will return on <strong>${formattedReturnDate}</strong>. During this time, I'll have limited access to email and may not be able to respond immediately.</p>
+    
+    <p style="margin: 0 0 20px 0; font-size: 15px;">For urgent matters, please reach out to:</p>
+    
+    <table style="max-width: 340px; margin: 0 0 24px 0; border-collapse: collapse; background-color: #f8f9fa; border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0;">
+      <tr>
+        <td style="padding: 20px; text-align: center; background-color: #0066cc; width: 80px;">
+          <div style="font-size: 36px; color: white;">👤</div>
+        </td>
+        <td style="padding: 20px;">
+          <h3 style="margin: 0 0 4px 0; color: #1a1a1a; font-size: 17px; font-weight: 600;">Firstname Surname</h3>
+          <p style="margin: 0 0 12px 0; color: #666; font-size: 13px;">Job Role</p>
+          <a href="mailto:email@email.com" style="color: #0066cc; text-decoration: none; font-weight: 600; font-size: 14px;">email@email.com →</a>
+        </td>
+      </tr>
+    </table>
+    
+    <p style="margin: 0; font-size: 14px; color: #666;">Thank you for your understanding.</p>
+  </div>`;
 }
