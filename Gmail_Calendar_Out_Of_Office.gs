@@ -1,7 +1,7 @@
 function activateOutOfOffice() {
   try {
     const calendarId = 'primary';
-    const keywords = ['Vacation', 'OOO', 'Holiday', 'Long Weekend', 'Bank Holiday', 'Christmas', 'Out-of-Office', 'Out of office'];
+    const keywords = ['Vacation', 'OOO', 'Out-of-Office', 'Out of office', 'Hols', 'Holiday', 'LW', 'Long Weekend', 'Bank Holiday', 'Christmas', 'AL', 'Annual Leave'];
     const events = findEvents(calendarId, keywords);
 
     if (events.length === 0) {
@@ -61,15 +61,6 @@ function updateVacationSettings(start, end, responseSubject, formattedReturnDate
 
     //If you sometimes write custom holiday messages but still want date automation, you could implement the below hybrid approach that looks for date placeholders in existing messages:
     
-    /*if (existingSettings.responseBodyHtml && existingSettings.responseBodyHtml.trim() !== '<div dir="ltr"></div>') {
-      // Replace any date placeholders in existing message
-      vacationSettings.responseBodyHtml = existingSettings.responseBodyHtml.replace(/\{RETURN_DATE\}/g, formattedReturnDate);
-      Logger.log('Updated existing message with current return date.');
-    } else {
-      vacationSettings.responseBodyHtml = generateDefaultResponseBody(formattedReturnDate);
-      Logger.log('Generated fresh out-of-office message with updated return date.');
-    }*/
-
     Gmail.Users.Settings.updateVacation(vacationSettings, 'me');
     Logger.log('Vacation settings updated successfully');
   } catch (error) {
